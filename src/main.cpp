@@ -17,8 +17,7 @@ int main() {
     list.addItem({"eggs", 1.00, 3});
     list.addItem({"bacon", 3.00, 4});
 
-    ConsoleUI console;
-    console.addList(list);
+    ConsoleUI console(list);
     console.run();
 }
 

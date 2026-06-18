@@ -9,7 +9,9 @@ public:
     void removeItem(const std::string& item_name); 
     void removeItem(const int listNumber);
     void printList() const;
-
+    Item* get_item(const std::string& item_name);
+    Item* get_item(const int listNumber);
+    static void printItem(const Item& item);
 
 private:
     std::vector<Item> items_;
