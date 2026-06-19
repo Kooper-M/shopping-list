@@ -5,6 +5,7 @@ class ConsoleUI {
     public:
         void run();
         ConsoleUI(const ShoppingList& list);
+        ConsoleUI() = default;
 
     private:
         //bool validStringInput(const std::string& prompt);

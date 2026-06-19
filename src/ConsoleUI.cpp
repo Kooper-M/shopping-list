@@ -20,7 +20,7 @@ using namespace std;
 ConsoleUI::ConsoleUI(const ShoppingList& list) : list_(list) {}
 
 void ConsoleUI::displayMenu() {
-    println("1. Print List\n3. Add Item\n4. Remove Item\n5. Edit Item\n6. Exit");
+    println("1. Print List\n3. Add Item\n4. Remove Item\n5. Edit Item\n6. Save List\n7. Load List\n8. Exit");
 }
 
 
@@ -85,6 +85,9 @@ void ConsoleUI::handleEditItem() {
             case 5:
                 EditingPrompt = false;
                 break;
+            default:
+                println("That's not an option");
+                break;
         }
     }
 
@@ -112,10 +115,21 @@ void ConsoleUI::run() {
                 handleEditItem();
                 break;
             case 6:
+                list_.saveList();
+                break;
+            case 7: {
+                int userBackOutInput = InputChecker::getIntInput("This will delete your current list, do you wish to procceed? (1. Yes | 2. No): ");
+                if (userBackOutInput == 1) {
+                    list_.loadList(InputChecker::getStringInput("Enter Name of list file (Default is output.exe): "));
+                }
+                break;
+            }
+            case 8:
                 running = false;
                 break;
             default:
                 println("That's not an option");
+                break;
         }
     }
 }

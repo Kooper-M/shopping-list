@@ -12,12 +12,12 @@ using namespace std;
 
 
 int main() {
-    ShoppingList list;
+    //ShoppingList list;
 
-    list.addItem({"eggs", 1.00, 3});
-    list.addItem({"bacon", 3.00, 4});
+    //list.addItem({"eggs", 1.00, 3});
+    //list.addItem({"bacon", 3.00, 4});
 
-    ConsoleUI console(list);
+    ConsoleUI console;
     console.run();
 }
 
